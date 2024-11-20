@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Haekal Maritim Indonesia</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="image/logo-removebg-preview.png" alt="logo" />
+            <h1>PT. HAEKAL MARITIM INDONESIA</h1>
+        </div>
+        <ul>
+            <li><a href="maritim.html">Home</a></li>
+            <li><a href="intro.html">Introduction</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="bisnis1.html">Business Overview</a></li>
+            <li><a href="company.html">Company Value</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </nav>
+    <div class="menubar">
+        <ul>
+            <li><a href="maritim.html">Home</a></li>
+            <li><a href="intro.html">Introduction</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="bisnis1.html">Business Overview</a></li>
+            <li><a href="company.html">Company Value</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <div class="contact-heading">
+            <h1>Contact Us</h1>
+            <img src="image/logo-removebg-preview.png" alt="Company Logo" class="contact-logo">
+            <h2>PT. Haekal Maritim Indonesia</h2>
+            <p class="contact-subtitle">Shipping Line, Agencies, & Shipping Support</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p><strong>Address:</strong> jl. Bugis No 48, Tanjung Priok, Jakarta Utara</p>
+            <p><strong>Email:</strong> <a href="mailto:contact@haekalmaritim.id">contact@haekalmaritim.id</a></p>
+            <p><strong>Phone:</strong> <a href="">(021) 22495683</a></p>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" onsubmit="sendMessage(event)">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+
+        <div id="formResponse"></div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p><img src="image/logo-removebg-preview.png" alt="Footer Logo" class="footer-logo"> © PT. Haekal Maritim
+            Indonesia</p>
+    </footer>
+
+    <script>
+        function sendMessage(event) {
+            // Mencegah pengiriman form secara default
+            event.preventDefault();
+
+            // Ambil data dari form
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            // Pastikan nomor WhatsApp dalam format internasional tanpa simbol "+"
+            const waNumber = "6285780541200"; // Ganti dengan nomor tujuan WhatsApp Anda
+
+            // Buat pesan yang akan dikirim ke WhatsApp
+            const waMessage = `Halo, saya ${name}.\n\nPesan: ${message}\n\nNomor HP: ${phone}`;
+
+            // Buat URL WhatsApp
+            const whatsappURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
+            // Buka URL WhatsApp di tab baru
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
